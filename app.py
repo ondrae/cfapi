@@ -735,6 +735,12 @@ def get_orgs_issues(organization_name, labels=None):
 @app.route('/api/projects/<int:id>')
 def get_projects(id=None):
     ''' Regular response option for projects.
+
+        @api {get} /projects/ Request project information
+        @apiGroup Projects
+        @apiParam {Number} per_page The number of features to return on each page.
+        @apiParam {String} name Filter on the name the feature.
+        @apiParam {String} organization_type Return projects from that type of organization
     '''
 
     filters, querystring = get_query_params(request.args)
